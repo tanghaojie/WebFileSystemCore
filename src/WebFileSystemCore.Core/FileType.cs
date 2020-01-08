@@ -61,5 +61,26 @@
             }
             throw new System.Exception();
         }
+        public static FileType ToFileType(this string fileTypeStr)
+        {
+            switch (fileTypeStr)
+            {
+                case "b":
+                    return FileType.BlockDeviceFile;
+                case "c":
+                    return FileType.CharacterDeviceFile;
+                case "d":
+                    return FileType.Directory;
+                case "s":
+                    return FileType.LocalSocketFile;
+                case "p":
+                    return FileType.NamedPipe;
+                case "-":
+                    return FileType.RegularFile;
+                case "l":
+                    return FileType.SymbolicLink;
+            }
+            throw new System.Exception();
+        }
     }
 }

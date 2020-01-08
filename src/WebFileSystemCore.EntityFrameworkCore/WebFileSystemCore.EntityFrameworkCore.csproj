@@ -20,8 +20,8 @@
     <None Remove="Migrations\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20191230094152_init.cs" />
-    <Compile Include="Migrations\20191230094152_init.designer.cs" />
+    <Compile Include="Migrations\20200108024233_init.cs" />
+    <Compile Include="Migrations\20200108024233_init.designer.cs" />
     <Compile Include="Migrations\WebFileSystemCoreDbContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>

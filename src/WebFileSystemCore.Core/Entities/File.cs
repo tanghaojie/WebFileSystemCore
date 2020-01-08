@@ -25,9 +25,9 @@ namespace WebFileSystemCore.Entities
         public string ContentType { get; set; }
 
         [Required]
-        public int PermissionsInt {
+        public string PermissionsStr {
             get {
-                return Permissions.ToInt();
+                return Permissions.ToString();
             }
             set {
                 Permissions = new Permissions(value);
@@ -35,6 +35,18 @@ namespace WebFileSystemCore.Entities
         }
         [NotMapped]
         public virtual Permissions Permissions { get; set; } = new Permissions();
+
+        [Required]
+        public string FileTypeStr {
+            get {
+                return FileType.ToIdentifier();
+            }
+            set {
+                FileType = value.ToFileType();
+            }
+        }
+        [NotMapped]
+        public virtual FileType FileType { get; set; } = FileType.RegularFile;
 
         public string Owner { get; set; }
 

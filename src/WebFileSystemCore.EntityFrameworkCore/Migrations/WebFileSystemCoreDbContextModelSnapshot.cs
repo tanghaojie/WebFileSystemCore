@@ -39,6 +39,10 @@ namespace WebFileSystemCore.Migrations
                     b.Property<string>("Extension")
                         .HasColumnType("text");
 
+                    b.Property<string>("FileTypeStr")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Filename")
                         .IsRequired()
                         .HasColumnType("text");
@@ -59,8 +63,9 @@ namespace WebFileSystemCore.Migrations
                     b.Property<string>("Owner")
                         .HasColumnType("text");
 
-                    b.Property<int>("PermissionsInt")
-                        .HasColumnType("integer");
+                    b.Property<string>("PermissionsStr")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

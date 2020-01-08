@@ -16,6 +16,16 @@
     <SatelliteResourceLanguages>zh-Hans</SatelliteResourceLanguages>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Files\**" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="Files\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="Files\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="Files\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="app.config" />
     <None Update="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -45,5 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
 </Project>
