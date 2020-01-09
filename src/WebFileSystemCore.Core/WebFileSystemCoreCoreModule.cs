@@ -1,5 +1,6 @@
 ﻿using Abp.Modules;
 using Abp.Reflection.Extensions;
+using WebFileSystemCore.Configuration;
 
 namespace WebFileSystemCore
 {

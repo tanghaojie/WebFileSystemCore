@@ -26,11 +26,11 @@ namespace WebFileSystemCore.Configuration
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(path)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                .AddJsonFile("Conf/appsettings.json", optional: true, reloadOnChange: true);
 
             if (!environmentName.IsNullOrWhiteSpace())
             {
-                builder = builder.AddJsonFile($"appsettings.{environmentName}.json", optional: true);
+                builder = builder.AddJsonFile($"Conf/appsettings.{environmentName}.json", optional: true);
             }
             
             builder = builder.AddEnvironmentVariables();

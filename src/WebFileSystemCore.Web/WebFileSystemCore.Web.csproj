@@ -26,7 +26,6 @@
     <None Remove="wwwroot\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Update="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

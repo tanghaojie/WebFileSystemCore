@@ -2,8 +2,12 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost:81/FileSystem",
+      "sslPort": 0
+    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:62116/",
+      "applicationUrl": "http://localhost:62116/aaa",
       "sslPort": 0
     }
   },

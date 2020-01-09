@@ -19,7 +19,7 @@ namespace WebFileSystemCore.Web.Startup.JTConfigurerExtensions
             return services.AddAbp<WebFileSystemCoreWebModule>(options =>
             {
                 //options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                //    f => f.UseAbpLog4Net().WithConfig("log4net.config")
+                //    f => f.UseAbpLog4Net().WithConfig("Conf/log4net.config")
                 //);
             });
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using System.Collections.Generic;
 
 namespace WebFileSystemCore.Web.Startup.JTConfigurerExtensions
 {
@@ -32,13 +33,23 @@ namespace WebFileSystemCore.Web.Startup.JTConfigurerExtensions
             });
         }
 
-        public static void JTUseSwagger(this IApplicationBuilder app)
+        public static void JTUseSwagger(this IApplicationBuilder app, string basePath = "")
         {
-            app.UseSwagger();
+            if (basePath == null) { basePath = ""; }
+            else
+            {
+                if (!basePath.StartsWith("/")) { basePath = "/" + basePath; }
+            }
+            app.UseSwagger(c =>
+            {
+                c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
+                {
+                    swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}{basePath}" } };
+                });
+            });
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
-                //options.IndexStream = () => Assembly.GetExecutingAssembly().GetManifestResourceStream("RLCore.Web.wwwroot.swagger.ui.index.html");
+                options.SwaggerEndpoint($"{basePath}/swagger/v1/swagger.json", "API V1");
             });
         }
     }
